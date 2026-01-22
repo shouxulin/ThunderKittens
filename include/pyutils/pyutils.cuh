@@ -21,9 +21,9 @@ template<ducks::gl::all GL> struct from_object<GL> {
             if (!obj.attr("is_contiguous")().cast<bool>()) {
                 throw std::runtime_error("Tensor must be contiguous");
             }
-            if (obj.attr("device").attr("type").cast<std::string>() == "cpu") {
-                throw std::runtime_error("Tensor must be on CUDA device");
-            }
+            // if (obj.attr("device").attr("type").cast<std::string>() == "cpu") {
+            //     throw std::runtime_error("Tensor must be on CUDA device");
+            // }
             
             // Get shape, pad with 1s if needed
             std::array<int, 4> shape = {1, 1, 1, 1};
